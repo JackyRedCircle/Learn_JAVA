@@ -1,4 +1,6 @@
+import java.time.temporal.ValueRange;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Day4 {
     public static void main(String[] args) {
@@ -65,6 +67,26 @@ class Event {
     String[] DungeonArr = {"FD", "WD", "PD", "LD", "DD"};
 
     void Meet() {
+    }
+}
 
+class Calculation {
+//    ramdom 메서드 정의
+    static String random(String value, int rate) { //value: 원하는 값의 문자열형식의 이름, rate: 원하는 값이 랜덤하게 나오는 비율
+        int repeatNum = 30; //문자열이 섞이는 횟수를 repeatNum에 저장
+        String[] valArr = new String[100]; //100칸 짜리 배열 valArr 선언 (이유는 비율이 백분율이기 때문)
+        for (int i = 0; i < rate; i++) { // 비율만큼 valArr에 원하는 값을 배열에 순차적으로 할당
+            valArr[i] = value;
+        }
+        for (int i = 0; i < repeatNum; i++) { // 배열을 섞는 반복문
+            int randomNum = (int)(Math.random()*100); //randomNum에 0~99중 랜덤하게 반환되는 수를 저장
+            String tmp = valArr[randomNum]; //자리 교환을 위한 임시 변수 tmp 선언 후, tmp에 randomNum 번지 값을 저장
+            valArr[randomNum] = valArr[i];// randomNum에 i번째 값을 저장
+            valArr[i] = tmp; // i번째에 randomNum번째 값을 저장 -> 이 과정으로 i번째 값과 randomNum번째 값의 자리가 교환
+//            System.out.println(Arrays.toString(valArr)); //확인을 위한 과정으로 이후 주석처리 요망.
+        }
+        int finalCalculateVal = (int)(Math.random()*100); // 뒤섞인 배열 중 임의의 한 칸의 주소를 택해 finalCalculateVal에 저장
+//        System.out.println(valArr[finalCalculateVal]); // 확인을 위한 과정으로 이후 주석처리 요망.
+        return valArr[finalCalculateVal]; // 최종적으로 뒤섞인 배열 가운데 임의의 한 값을 골라 반환
     }
 }
