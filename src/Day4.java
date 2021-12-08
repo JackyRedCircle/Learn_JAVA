@@ -19,7 +19,6 @@ public class Day4 {
 
         while(true) {
             System.out.printf("길을 걷고 있습니다. 그런데...");
-            Math.random();
         }
     }
 }
@@ -86,7 +85,7 @@ class Calculation {
 //            System.out.println(Arrays.toString(valArr)); //확인을 위한 과정으로 이후 주석처리 요망.
         }
         int finalCalculateVal = (int)(Math.random()*100); // 뒤섞인 배열 중 임의의 한 칸의 주소를 택해 finalCalculateVal에 저장
-//        System.out.println(valArr[finalCalculateVal]); // 확인을 위한 과정으로 이후 주석처리 요망.
+        System.out.println(valArr[finalCalculateVal]); // 확인을 위한 과정으로 이후 주석처리 요망.
         return valArr[finalCalculateVal]; // 최종적으로 뒤섞인 배열 가운데 임의의 한 값을 골라 반환
     }
 }
