@@ -1,37 +1,68 @@
+import java.lang.reflect.Type;
 import java.sql.ClientInfoStatus;
 
 public class Day5 {
     public static void main(String[] args) {
-        int[] numArr = {1,3,2,5,5,4,8,7,6,5,3};
+        String[] numArr = {"가", "나", "다", "라", "마", "바", "사", "아", "자", "차", "카", "타", "파", "하"};
 
         LinkedList ll = new LinkedList();
 
         for (int i = 0; i < numArr.length; i++) {
             ll.append(numArr[i]);
         }
-        ll.show();
-        ll.removeOverlap();
-        ll.show();
+
+        int fromStart = 4;
+        int fromLast = 3;
+
+        System.out.println(ll.getOrderNum("마"));
     }
 }
+
+
 
 class LinkedList {
     Node header;
 
     static class Node {
-        int data;
+        String data;
         Node next = null;
 
-        Node(int data) {
+        Node(String data) {
             this.data = data;
         }
     }
 
     LinkedList () {
-        header = new Node(0);
+        header = new Node(null);
     }
 
-    void append (int data) {
+    Node getStrat () {
+        return this.header;
+    }
+
+    int getOrderNum (String data) {
+        Node n = this.header;
+        int count = 0;
+        int dataNum = 0;
+        boolean noDataSign = true;
+        while (n.next != null) {
+            if (n.data == data) {
+                noDataSign = false;
+                dataNum = count;
+            }
+            count++;
+            n = n.next;
+        }
+        if (noDataSign == true) {
+            System.out.printf("error: the data %s is not in list. error code :",data);
+            return 0;
+        }
+        else {
+            return dataNum;
+        }
+    }
+
+    void append (String data) {
         Node end = new Node(data);
         Node n = header;
 
@@ -42,7 +73,7 @@ class LinkedList {
         n.next = end;
     }
 
-    void delete (int data) {
+    void delete (String data) {
         Node n = header;
 
         while (n.next != null) {
@@ -81,5 +112,42 @@ class LinkedList {
 
             n = n.next;
         }
+    }
+
+    static Node KthToFirst (Node n, int k) {
+        for (int i = 0; i < k; i++) {
+            n = n.next;
+        }
+        return n;
+    }
+
+    static Node KthToLast (Node firstNode, int k) {
+
+        int count = 1;
+        Node n = firstNode;
+
+        while (n.next != null) {
+            n = n.next;
+            count++;
+        }
+
+        n = firstNode;
+
+        for (int i = 1; i < count + 1 - k; i++) {
+            n = n.next;
+        }
+        return n;
+    }
+
+    static int KthToLastPrint (Node n, int k) {
+        if (n == null) {
+             return 0;
+        }
+
+        int count = KthToLastPrint(n.next, k) + 1;
+        if (count == k) {
+            System.out.println(count+"th data from last is "+n.data);
+        }
+        return count;
     }
 }
