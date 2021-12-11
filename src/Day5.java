@@ -14,7 +14,7 @@ public class Day5 {
         int fromStart = 4;
         int fromLast = 3;
 
-        System.out.println(ll.getOrderNum("마"));
+        System.out.println(ll.getOrderNum("달"));
     }
 }
 

@@ -35,7 +35,7 @@ public class Day4 {
                 resultArr[9]==null
         ) {
             for (int i = 0; i < 10;i++) {
-                resultArr[i] = Calculation.random("섹스",1); //0.0001%
+                resultArr[i] = Calculation.random("당첨",1); //0.0001%
             }
             System.out.println(Arrays.toString(resultArr));
             count++;
