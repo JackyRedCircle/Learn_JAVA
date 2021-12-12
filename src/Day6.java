@@ -10,7 +10,77 @@ public class Day6 {
 //
 //        * 추상클래스는 상속을 통해 자손클래스에 의해서만 완성될 수 있다.
 //        단, 자손클래스에서 부모클래스에 있는 추상클래스를 전부 재정의 해주어야 에러가 나지 않음.
-//
-//        *
+//          실습!
+    }
+}
+
+//효과 번호 (effectKind 변수)
+//1.독, 2.크리티컬, 3.주의분산
+
+abstract class Creature {
+
+    String name;
+    int LV, HP, MP, fireAttackVal, waterAttackVal, plantAttackVal, lightAttackVal, darkAttackVal, criticalVal;
+
+    Creature (String name, int LV, int HP, int MP, int fireAttackVal, int waterAttackVal, int plantAttackVal, int lightAttackVal, int darkAttackVal) {
+        this.name = name;
+        this.LV = LV;
+        this.HP = HP;
+        this.MP = MP;
+        this.fireAttackVal = fireAttackVal;
+        this.waterAttackVal = waterAttackVal;
+        this.plantAttackVal = plantAttackVal;
+        this.lightAttackVal = lightAttackVal;
+        this.darkAttackVal = darkAttackVal;
+    }
+    int Attack (int attackVal, int criticalRate) {
+        if (Calculation.random("critical", criticalRate) == "critical") {
+            System.out.printf("급소에 맞은 것 같다! [크리티컬 공격이 들어갔습니다. %d의 공격력이 들어갑니다.]%n", attackVal*3);
+            return attackVal*3;
+        }
+        return attackVal;
+    }
+
+    int Defence (int defenceVal, int effectKind) {
+        switch (effectKind) {
+            case 1: {
+                return defenceVal/2;
+            }
+
+            case 2: {
+                return defenceVal*2;
+            }
+
+            case 3: {
+                return defenceVal/4;
+            }
+        }
+        return defenceVal;
+    }
+
+    abstract int level (int LV);
+}
+
+class Human extends Creature {
+
+    Human (String name, int LV, int HP, int MP, int fireAttackVal, int waterAttackVal, int plantAttackVal, int lightAttackVal, int darkAttackVal) {
+        super(name, LV, HP, MP, fireAttackVal, waterAttackVal, plantAttackVal, lightAttackVal, darkAttackVal);
+    }
+
+    int level (int LV) {
+        super.LV = LV;
+        return LV;
+    }
+}
+
+class Enemy extends Creature {
+
+    Enemy(String name, int LV, int HP, int MP, int fireAttackVal, int waterAttackVal, int plantAttackVal, int lightAttackVal, int darkAttackVal) {
+        super(name, LV, HP, MP, fireAttackVal, waterAttackVal, plantAttackVal, lightAttackVal, darkAttackVal);
+    }
+
+    int level (int LV) {
+        super.LV = LV;
+        return LV;
     }
 }

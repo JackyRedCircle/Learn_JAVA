@@ -97,7 +97,7 @@ class Calculation {
 //    ramdom 메서드 정의
     static String random(String value, int rate) { //value: 원하는 값의 문자열형식의 이름, rate: 원하는 값이 랜덤하게 나오는 비율
         int repeatNum = 1; //문자열이 섞이는 횟수를 repeatNum에 저장
-        String[] valArr = new String[100000]; //100칸 짜리 배열 valArr 선언 (이유는 비율이 백분율이기 때문)
+        String[] valArr = new String[100000]; //100000칸 짜리 배열 valArr 선언 (이유는 비율이 백분율이기 때문)
         for (int i = 0; i < rate; i++) { // 비율만큼 valArr에 원하는 값을 배열에 순차적으로 할당
             valArr[i] = value;
         }
