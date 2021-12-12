@@ -18,7 +18,7 @@ public class Day6 {
 //1.독, 2.크리티컬, 3.주의분산
 
 abstract class Creature {
-
+// 생물체의 공통적인 속성을 담은 클래스로 미완성 메서드가 존재.
     String name;
     int LV, HP, MP, fireAttackVal, waterAttackVal, plantAttackVal, lightAttackVal, darkAttackVal, criticalVal;
 

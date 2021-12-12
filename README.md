@@ -44,3 +44,4 @@
 * [Day3](https://github.com/JackyRedCircle/Learn_JAVA/blob/master/src/Day3.java)
 * [Day4](https://github.com/JackyRedCircle/Learn_JAVA/blob/master/src/Day4.java)
 * [Day5](https://github.com/JackyRedCircle/Learn_JAVA/blob/master/src/Day5.java)
+* [Day6](https://github.com/JackyRedCircle/Learn_JAVA/blob/master/src/Day6.java)
