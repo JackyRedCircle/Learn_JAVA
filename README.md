@@ -11,7 +11,7 @@
 
 2. It can use in developing **PC, Web, mobile app, analysing BD, game and etc**.
 
-3. JAVA is **the most common programming word in the world**.(That mean, it can be **the most useful** word.)
+3. JAVA is **one of the most common programming languages in the world**.(That mean, it can be **very powerful**.)
 
 4. JAVA was born **earlier than Python**.
 
@@ -20,11 +20,11 @@
 
 1. It is pretty **easy** to learn.
 
-2. memory is manage by GC in **automatic**.
+2. memory is manage by GC in **automaticly**.
 
-3. It can support **muti-thread**.
+3. It support **muti-thread**.
 
-4. It provide **various library**.
+4. It is provided **various library**.
 
 5. It is **independent** from OS.
 
@@ -33,7 +33,7 @@
 
 * JVM is a virtual computer that operated JAVA. **(Write once,Run anywhere)**
 
-* JVM is the reason that JAVA can operate in any OS without limit by diffrence.  
+* JVM is the reason that JAVA can operate in any OS.  
 
 ---
 
